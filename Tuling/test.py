@@ -16,4 +16,4 @@ if __name__ == '__main__':
         request = api + info
         response = getHtml(request)
         dic_json = json.loads(response)
-        print '机器人: '.decode('utf-8') + dic_json['text'] 
+        print 'dva: '.decode('utf-8') + dic_json['text'] 
