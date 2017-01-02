@@ -1,7 +1,8 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
+#encoding=utf-8
 import urllib
 import json
+import PyBaiduYuyin as pby
 
 def getHtml(url):
     page = urllib.urlopen(url)
@@ -16,4 +17,7 @@ if __name__ == '__main__':
         request = api + info
         response = getHtml(request)
         dic_json = json.loads(response)
-        print 'dva: '.decode('utf-8') + dic_json['text'] 
+        print 'dva: '.decode('utf-8') + dic_json['text']
+        tts = pby.TTS(app_key='Oguw8LNsBK16QTsylkHgiUxu',secret_key='e396a1424d6ddbe72e935a3e96c35593',per=1)
+        a = dic_json['text']
+        tts.say(a.encode("UTF-8"))
